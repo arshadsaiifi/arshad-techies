@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+ <div class="container-fluid px-0">
+    <img src="/static/img/6.avif" class="b-block w-100" alt="Image">
+    <div>
+  <div class="container">
+    <h1 class="text-center mb-4 py-4">Contact Us</h1>
+    <p class="lead text-center">We'd love to hear from you! Reach out to us for any inquiries or collaborations.</p>
+
+    <div class="row">
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <form method="POST" action="/contact">
+                {% csrf_token %}  <!-- CSRF Token Added -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name here">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email here">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number here">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="col-md-6">
+            <h3>Get in Touch</h3>
+            <p>We're here to help! Feel free to reach out via email, phone, or visit our office.</p>
+            <ul class="list-unstyled">
+                <li><strong>Email:</strong> info@arshadtechies.com</li>
+                <li><strong>Phone:</strong> +91 XXXXX XXXXX</li>
+                <li><strong>Address:</strong> [Your Office Address]</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
