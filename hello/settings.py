@@ -124,9 +124,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # add manually
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+# STATICFILES_DIRS = [BASE_DIR / "static"]
+# Deployment ke liye STATIC_ROOT define karo
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Default primary key field type
